@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body style="background-color: #FFFFCC">
+        @{
+            var rnd = new System.Random();
+            bool isWinner = false;
+
+            int num_slot1 = rnd.Next(0, 9);
+            int num_slot2 = rnd.Next(0, 9);
+            int num_slot3 = rnd.Next(0, 9);
+
+            if (num_slot1 == 7 || num_slot2 == 7 || num_slot3 == 7)
+            {
+                isWinner = true;
+            }
+            else
+            {
+                isWinner = false;
+            }
+
+
+        }
+        <input type="submit" name="spinButton" value="Spin" id="spinButton" onclick="history.go(0)" />
+
+        @*Slot Reels*@
+        <span id="Slot1" style="font-size: 36px;   background-color: yellow; border-color: black; border-width: 1px; border-style: solid;">@num_slot1</span>
+        <span id="Slot2" style="font-size: 36px; background-color: yellow; border-color: black; border-width: 1px; border-style: solid;">@num_slot2</span>
+        <span id="Slot3" style="font-size: 36px; background-color: yellow; border-color: black; border-width: 1px; border-style: solid;">@num_slot3</span>
+        <br />
+        <h1 style="display:inline-block;font-size:24pt;font-weight:bold;width:118px;">LUCKY SEVEN</h1>
+        <br />
+        @{
+            if (isWinner)
+            {
+                <img src="http://faculty.cascadia.edu/brianb/bit285/exercises/lucky7/LuckySevenExercise.jpg" />
+            }
+         }
+
+    </body>
+</html>
